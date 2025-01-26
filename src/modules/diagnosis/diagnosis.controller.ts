@@ -17,12 +17,30 @@ export class DiagnosisController {
         return this.diagnosisService.ai(diagnosis);
     }
 
+    @Post("/ai")
+    @ApiResponse({
+        description: 'Diagnosis response data',
+        type: Diagnosis,
+    })
+    async aiPost(@Body() diagnosis:DiagnosisDto):Promise<any>{
+        return this.diagnosisService.ai(diagnosis);
+    }
+
     @Get("/evidence-based")
     @ApiResponse({
         description: 'Evidence based report on conditions',
         type: Condition,
     })
     async evidence(@Body() answers:ConditionDto):Promise<any>{
+        return this.diagnosisService.evidence(answers);
+    }
+
+    @Post("/evidence-based")
+    @ApiResponse({
+        description: 'Evidence based report on conditions',
+        type: Condition,
+    })
+    async evidencePost(@Body() answers:ConditionDto):Promise<any>{
         return this.diagnosisService.evidence(answers);
     }
 
