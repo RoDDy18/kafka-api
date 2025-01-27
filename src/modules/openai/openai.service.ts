@@ -371,7 +371,7 @@ export class OpenAIService {
             },
         });
 
-        console.log(JSON.parse(completion.choices[0].message.content))
+        //console.log(JSON.parse(completion.choices[0].message.content))
        return {
         report: diagnosis,
         ai_report: JSON.parse(completion.choices[0].message.content).advice
@@ -479,7 +479,7 @@ export class OpenAIService {
             },
         });
 
-        console.log(JSON.parse(completion.choices[0].message.content))
+        //console.log(JSON.parse(completion.choices[0].message.content))
        return {
         report: diagnosis,
         ai_report: JSON.parse(completion.choices[0].message.content).advice
@@ -602,7 +602,7 @@ export class OpenAIService {
             },
         });
 
-        console.log(JSON.parse(completion.choices[0].message.content))
+        //console.log(JSON.parse(completion.choices[0].message.content))
        return {
         report: diagnosis,
         ai_report: JSON.parse(completion.choices[0].message.content).advice
