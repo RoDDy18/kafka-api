@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { DiagnosisDto, ConditionDto, Condition } from './diagnosis.model';
 import { OpenAIService } from '../openai/openai.service';
 import { ConditionType } from './diagnosis.enum';
-import { determineAnxietyLevel, determineDepressionLevel } from 'src/common/common';
+import { determineAlcoholUseLevel, determineAnxietyLevel, determineDepressionLevel } from 'src/common/common';
 
 @Injectable()
 export class DiagnosisService {
@@ -62,7 +62,7 @@ export class DiagnosisService {
     }
 
     public async alcoholEvaluation(answers: ConditionDto): Promise<Condition>{
-        const diagnosis = determineDepressionLevel(answers.alcohol_use.condition_score);
+        const diagnosis = determineAlcoholUseLevel(answers.alcohol_use.condition_score);
         const final = await this.openAI.generateAlcoholUseReport(diagnosis, answers);
         return final;
     }
