@@ -38,13 +38,13 @@ function determineAlcoholUseLevel(score: number) {
     }
 
     if (score >= 0 && score <= 7) {
-        return "Low risk";
+        return "Low risk use of Alcohol use";
     } else if (score >= 8 && score <= 15) {
-        return "Hazardous use";
+        return "Hazardous use of Alcohol";
     } else if (score >= 16 && score <= 19) {
-        return "Harmful use";
+        return "Harmful use of Alcohol";
     } else if (score >= 20) {
-        return "Possible dependence";
+        return "Possible dependence on Alcohol";
     }
 }
 
